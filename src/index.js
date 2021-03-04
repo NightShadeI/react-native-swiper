@@ -8,12 +8,12 @@ import {
   Text,
   View,
   ViewPropTypes,
-  ScrollView,
   Dimensions,
   TouchableOpacity,
   Platform,
   ActivityIndicator
 } from 'react-native'
+import { ScrollView as GestureHandlerScrollView } from 'react-native-gesture-handler'
 
 /**
  * Default styles
@@ -770,7 +770,7 @@ export default class extends Component {
 
   renderScrollView = pages => {
     return (
-      <ScrollView
+      <GestureHandlerScrollView
         ref={this.refScrollView}
         {...this.props}
         {...this.scrollViewPropOverrides()}
@@ -782,7 +782,7 @@ export default class extends Component {
         style={this.props.scrollViewStyle}
       >
         {pages}
-      </ScrollView>
+      </GestureHandlerScrollView>
     )
   }
 
